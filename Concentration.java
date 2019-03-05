@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * The game of Concentration (also called Memory or Match Match)
  * 
@@ -18,10 +20,33 @@ public class Concentration extends Board
      * The constructor for the game. Creates the 2-dim gameboard
      * by populating it with tiles.
      */
-    public Concentration() { 
+    public Concentration() {
+        gameboard = makeBoard();
 
-       // to do
+        String[] cards = getCards();
 
+        // Fisher–Yates shuffle
+        // https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
+        Random rand = new Random();
+
+        for (int swapA = cards.length - 1; swapA > 0; swapA--) {
+            int swapB = rand.nextInt(swapA + 1);
+
+            String cardA = cards[swapA];
+            String cardB = cards[swapB];
+
+            cards[swapA] = cardB;
+            cards[swapB] = cardA;
+        }
+
+        // place on board
+        int cardIndex = 0;
+        for (int row = 0; row < gameboard.length; row++) {
+            for (int col = 0; col < gameboard[0].length; col++) {
+                gameboard[row][col] = new Tile(cards[cardIndex]);
+                cardIndex++;
+            }
+        }
     }
     /**
      * Determine if the board is full of cards that have all been matched,
