@@ -70,8 +70,7 @@ public class Concentration extends Board
      * @param column the column value of Tile
      */
     public void showFaceUp (int row, int column) {
-        
-        // to do 
+        gameboard[row][column].faceUp(true);
     }
 
     /**
