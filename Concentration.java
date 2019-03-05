@@ -83,10 +83,30 @@ public class Concentration extends Board
      * @return a string represetation of the board
      */
     public String toString() {
-        
-        // to do
-        
-        return "";
+        String boardString = "";
+
+        for (int row = 0; row < gameboard.length; row++) {
+
+            int numColumns = gameboard[row].length;
+
+            for (int col = 0; col < numColumns; col++) {
+
+                Tile t = gameboard[row][col];
+
+                if (t.isFaceUp()) {
+                    boardString += t.getFace();
+                } else {
+                    boardString += t.getBack();
+                }
+
+                if (col < numColumns - 1) {
+                    boardString += "\t";
+                }
+            }
+            boardString += "\n";
+        }
+
+        return boardString;
     }
 
 }
