@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Tile[][]\ makeBoard()
+comment0.text=\r\n\ Create\ a\ 2-dim\ array\ to\ represent\ a\ game\ board\ and\ return\ it\r\n\ \ \r\n\ @return\ a\ game\ board\ of\ tiles\ with\ dimension\ rows\ x\ columns\r\n
+comment1.params=
+comment1.target=java.lang.String[]\ getCards()
+comment1.text=\r\n\ Return\ the\ array\ of\ cards\r\n\ \r\n\ @return\ a\ String\ array\ of\ card\ values\r\n\ \r\n
+numComments=2

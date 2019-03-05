@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Concentration()
+comment0.text=\ \r\n\ The\ constructor\ for\ the\ game.\ Creates\ the\ 2-dim\ gameboard\r\n\ by\ populating\ it\ with\ tiles.\r\n
+comment1.params=
+comment1.target=boolean\ allTilesMatch()
+comment1.text=\r\n\ Determine\ if\ the\ board\ is\ full\ of\ cards\ that\ have\ all\ been\ matched,\r\n\ indicating\ the\ game\ is\ over\r\n\ \r\n\ Precondition\:\ gameboard\ is\ populated\ with\ tiles\r\n\ \r\n\ @return\ true\ if\ all\ pairs\ of\ cards\ have\ been\ matched,\ false\ otherwse\r\n
+comment2.params=row1\ column1\ row2\ column2
+comment2.target=java.lang.String\ checkForMatch(int,\ int,\ int,\ int)
+comment2.text=\r\n\ Check\ for\ a\ match\ between\ the\ cards\ in\ the\ two\ tile\ locations.\r\n\ For\ matched\ cards,\ remove\ from\ the\ board.\ For\ unmatched\ cares,\ them\ face\ down\ again.\r\n\ \r\n\ Precondition\:\ gameboard\ is\ populated\ with\ tiles,\r\n\ row\ values\ (i\ values)\ must\ be\ in\ the\ range\ of\ 0\ to\ gameboard.length,\r\n\ column\ values\ (j\ values)\ must\ be\ in\ the\ range\ of\ 0\ to\ gameboard[0].length\r\n\ \r\n\ @param\ row1\ the\ row\ value\ of\ Tile\ 1\r\n\ @param\ column1\ the\ column\ value\ of\ Tile\ 1\r\n\ @param\ row2\ the\ row\ value\ of\ Tile\ 2\r\n\ @param\ column2\ the\ column\ vlue\ of\ Tile\ 2\r\n\ @return\ a\ message\ indicating\ whether\ or\ not\ a\ match\ occured\r\n
+comment3.params=row\ column
+comment3.target=void\ showFaceUp(int,\ int)
+comment3.text=\r\n\ Set\ \ tile\ to\ show\ its\ card\ in\ the\ face\ up\ state\r\n\ \r\n\ Precondition\:\ gameboard\ is\ populated\ with\ tiles,\r\n\ row\ values\ (i\ values)\ must\ be\ in\ the\ range\ of\ 0\ to\ gameboard.length,\r\n\ column\ values\ (j\ values)\ must\ be\ in\ the\ range\ of\ 0\ to\ gameboard[0].length\r\n\ \r\n\ @param\ row\ the\ row\ value\ of\ Tile\r\n\ @param\ column\ the\ column\ value\ of\ Tile\r\n
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment4.text=\r\n\ Returns\ a\ string\ representation\ of\ the\ board.\ A\ tab\ is\ placed\ between\ tiles,\r\n\ and\ a\ newline\ is\ placed\ at\ the\ end\ of\ a\ row\r\n\ \r\n\ Precondition\:\ gameboard\ is\ populated\ with\ tiles\r\n\ \r\n\ @return\ a\ string\ represetation\ of\ the\ board\r\n
+numComments=5

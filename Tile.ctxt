@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=word
+comment0.target=Tile(java.lang.String)
+comment0.text=\r\n\ Construct\ a\ tile\ with\ a\ string\ value.\ The\ default\ state\r\n\ of\ a\ tile\ is\ unmatched\ and\ face\ down\ on\ the\ board.\r\n\ \r\n\ @param\ \ word\ the\ word\ that\ represents\ the\ card\ face\r\n
+comment1.params=
+comment1.target=java.lang.String\ getFace()
+comment1.text=\r\n\ Return\ the\ value\ of\ the\ tile\ in\ its\ face\ up\ state\r\n\ \ \r\n\ @return\ faceUp\ \r\n
+comment2.params=
+comment2.target=java.lang.String\ getBack()
+comment2.text=\r\n\ Return\ the\ value\ of\ the\ tile\ in\ its\ face\ down\ state\r\n\ \r\n\ @return\ the\ face\ (as\ a\ String\ value)\r\n
+comment3.params=b
+comment3.target=void\ faceUp(boolean)
+comment3.text=\r\n\ Set\ the\ card\ to\ either\ a\ face\ up\ or\ face\ down\ state\r\n\ \r\n\ @param\ b\ set\ to\ true\ to\ show\ the\ card\ face\ up,\ set\ to\ false\ to\ show\ face\ down\r\n
+comment4.params=
+comment4.target=boolean\ isFaceUp()
+comment4.text=\r\n\ Determine\ if\ the\ card\ is\ currently\ face\ up\r\n\ \r\n\ @return\ true\ if\ the\ card\ is\ currently\ in\ the\ faceUp\ state,\ false\ otherwise\r\n
+comment5.params=
+comment5.target=void\ foundMatch()
+comment5.text=\r\n\ A\ matching\ pair\ of\ cards\ has\ been\ found,\ set\ matched\ to\ true\r\n\ and\ change\ the\ way\ the\ card\ is\ shown\ \r\n
+comment6.params=
+comment6.target=boolean\ matched()
+comment6.text=\r\n\ Determine\ if\ this\ tile\ has\ been\ matched\r\n\ \r\n\ @return\ true\ of\ the\ card\ was\ previously\ matched,\ false\ otherwise\r\n
+numComments=7
