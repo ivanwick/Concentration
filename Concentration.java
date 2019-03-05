@@ -85,10 +85,20 @@ public class Concentration extends Board
      * @return a message indicating whether or not a match occured
      */
     public String checkForMatch(int row1, int column1, int row2, int column2) {
-        
-        // to do
-        
-        return "";
+        Tile tile1 = gameboard[row1][column1];
+        Tile tile2 = gameboard[row2][column2];
+
+        if (tile1.equals(tile2)) {
+            tile1.foundMatch();
+            tile2.foundMatch();
+
+            return "MATCH";
+        } else {
+            tile1.faceUp(false);
+            tile2.faceUp(false);
+
+            return "no match sorry";
+        }
     }
 
     /**
