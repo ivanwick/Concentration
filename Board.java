@@ -9,7 +9,7 @@
 public abstract class Board
 {
     //The cards that will be placed in the tiles
-    private String[] cards = new String[] {"dog", "dog", "cat", "cat", "mouse", "mouse",
+    public String[] cards = new String[] {"dog", "dog", "cat", "cat", "mouse", "mouse",
         "wolf", "wolf", "monkey", "monkey", "bird", "bird"}; 
 
     // The  shape of the board

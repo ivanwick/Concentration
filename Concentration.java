@@ -9,19 +9,33 @@
  * 
  * Play continues, matching two cards at a time, until all cards have been matched.
  */
+import java.util.Random;
 public class Concentration extends Board
 {
     // create the game board
     private Tile[][] gameboard = makeBoard();
-
+    int match = 0;
+    int maxMatches = cards.length/2;
     /** 
      * The constructor for the game. Creates the 2-dim gameboard
      * by populating it with tiles.
      */
-    public Concentration() { 
-
-       // to do
-
+    public Concentration() {
+       //gmaeboard array
+       String [] cards = getCards();
+       int num = cards.length -1;
+       Random random = new Random();
+       
+       //Subscribe to Emiliano Vlogs.
+       for (int i = 0; i < gameboard.length; i++){
+           for (int j = 0; j < gameboard[0].length; j++){
+               int merchant = (int)(Math.random()*num);
+               gameboard[i][j] = new Tile(cards[merchant]);
+               cards[merchant] = cards[num];
+               num--;
+            }
+           
+       }
     }
     /**
      * Determine if the board is full of cards that have all been matched,
@@ -32,10 +46,31 @@ public class Concentration extends Board
      * @return true if all pairs of cards have been matched, false otherwse
      */
     public boolean allTilesMatch() {
-        
-        // to do
-        
-        return true;
+      // to do
+      boolean gameOver = true;
+      /*
+      if(match == maxMatches)
+          {
+              return false;
+          }
+          
+      */
+     
+      for (int i = 0; i < gameboard.length; i++)
+      {
+          for (int j = 0; j < gameboard[0].length; j++)
+          {
+              if (gameboard[i][j].matched() == true)
+              {
+                  gameOver = false;
+                } else
+                {
+                    gameOver = true;
+                    return gameOver;
+                }
+            }
+        }
+      return true;
     }
 
     /**
@@ -52,12 +87,40 @@ public class Concentration extends Board
      * @param column2 the column vlue of Tile 2
      * @return a message indicating whether or not a match occured
      */
-    public String checkForMatch(int row1, int column1, int row2, int column2) {
+    public String checkForMatch(int row1, int column1, int row2, int column2)
+    {
+        //This is Rebecca's completed code!!
+        /*
+        String card1 = gameboard[row1][column1].getFace();
+        String card2 = gameboard[row2][column2].getFace();
         
-        // to do
+        if (card1.equals(card2))
+        {
+            gameboard[row1][column1].foundMatch();
+            gameboard[row2][column2].foundMatch();
+            return "Matched!";
+        }
         
+        gameboard[row1][column1].faceUp(false);
+        gameboard[row2][column2].faceUp(false);
         return "";
-    }
+        */
+       //The following code is the same as Rebecca's but this one is Christian's
+        if (gameboard[row1][column1].getFace().equals(gameboard[row2][column2].getFace()))
+        {
+            gameboard[row1][column1].foundMatch();
+            gameboard[row2][column2].foundMatch();
+            match++;
+  
+            return "true";
+        }
+         else 
+         {
+             gameboard[row1][column1].faceUp(false);
+             gameboard[row2][column2].faceUp(false);
+             return "false";
+         }
+}
 
     /**
      * Set  tile to show its card in the face up state
@@ -70,7 +133,7 @@ public class Concentration extends Board
      * @param column the column value of Tile
      */
     public void showFaceUp (int row, int column) {
-        
+        gameboard[row][column].faceUp(true);
         // to do 
     }
 
@@ -84,7 +147,25 @@ public class Concentration extends Board
      */
     public String toString() {
         
-        // to do
+       
+       for (int i = 0; i < gameboard.length; i++){
+           for (int j = 0; j < gameboard[0].length; j++){
+               Tile t = gameboard[i][j];
+               //System.out.print(t.getFace() + " ");
+               //System.out.print(t.getBack() + " ");
+               
+               if (gameboard[i][j].isFaceUp() == true)
+               {
+                   System.out.print(gameboard[i][j].getFace() + " ");
+                }
+                else 
+                {
+                    System.out.print(gameboard[i][j].getBack() + " ");
+                }
+               
+            }
+           System.out.println();
+       }
         
         return "";
     }

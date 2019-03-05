@@ -20,8 +20,8 @@ public class Tile
     private boolean faceUp;
     private boolean matched;
     private String cardFace; 
-    private String cardBack = "_____";
-    private String cardMatched = "  *  ";
+    private String cardBack = "______";
+    private String cardMatched = "  ***  ";
     
     /**
      * Construct a tile with a string value. The default state

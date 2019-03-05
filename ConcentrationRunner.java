@@ -76,7 +76,7 @@ public class ConcentrationRunner
      */
     public static void displayBoard() {
 
-        System.out.print('\u000C'); 
+        //System.out.print('\u000C'); 
         System.out.println(game);
     }
 
