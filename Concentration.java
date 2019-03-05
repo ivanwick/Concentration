@@ -57,9 +57,16 @@ public class Concentration extends Board
      * @return true if all pairs of cards have been matched, false otherwse
      */
     public boolean allTilesMatch() {
-        
-        // to do
-        
+
+        for (int row = 0; row < gameboard.length; row++) {
+            for (int col = 0; col < gameboard[0].length; col++) {
+                Tile t = gameboard[row][col];
+                if (!t.matched()) {
+                    return false;
+                }
+            }
+        }
+
         return true;
     }
 
