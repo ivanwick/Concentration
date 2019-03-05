@@ -90,5 +90,14 @@ public class Tile
         return matched;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Tile) {
+            Tile otherTile = (Tile)obj;
+            return cardFace.equals(otherTile.getFace());
+        } else {
+            return false;
+        }
+    }
 }
 
