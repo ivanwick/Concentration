@@ -15,8 +15,7 @@ public class Concentration extends Board
     // create the game board
     private Tile[][] gameboard = makeBoard();
     int match = 0;
-    int maxMatches = cards.length/2;
-    /** 
+    /**
      * The constructor for the game. Creates the 2-dim gameboard
      * by populating it with tiles.
      */
@@ -46,31 +45,26 @@ public class Concentration extends Board
      * @return true if all pairs of cards have been matched, false otherwse
      */
     public boolean allTilesMatch() {
-      // to do
-      boolean gameOver = true;
-      /*
-      if(match == maxMatches)
-          {
-              return false;
-          }
-          
-      */
-     
-      for (int i = 0; i < gameboard.length; i++)
-      {
-          for (int j = 0; j < gameboard[0].length; j++)
-          {
-              if (gameboard[i][j].matched() == true)
-              {
-                  gameOver = false;
-                } else
-                {
-                    gameOver = true;
-                    return gameOver;
+        // Iterate through all game tiles, check whether each one is matched.
+        for (int i = 0; i < gameboard.length; i++) {
+            for (int j = 0; j < gameboard[0].length; j++) {
+                // If ANY one tile is not matched yet, then the game is not
+                // over and this method can return immediately.
+                if (!gameboard[i][j].matched()) {
+                    // returning here means we stop looping, and don't check
+                    // the rest of the tiles. We don't need to check the rest
+                    // because we know at least one tile is NOT matched yet,
+                    // so the game's NOT over.
+                    return false;
                 }
+                // Otherwise the loop continues checking the other tiles.
             }
         }
-      return true;
+
+        // If we get here, it means the loops above have checked all tiles and
+        // did not return false early.
+        // That means ALL tiles are matched and the game is over.
+        return true;
     }
 
     /**
